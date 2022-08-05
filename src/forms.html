@@ -1,0 +1,77 @@
+<!doctype html>
+<head>
+    <link href="dist/output.css" rel="stylesheet"></script>
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+</head>
+<body class="bg-white flex flex-col   ">
+  <div id="formie">
+    <div class=" px-3 sm:px-4 bg-purple-500 flex flex-row content-center items-center"><h1 class="text-white font-medium sm:font-semibold sm:text-xl">Welcome!</h1>
+      <button onclick="window.location.replace('upload.html')" class="outline-none font-medium text-white ml-auto mr-2 border-1 border-white   p-2 py-[6px] m-2 px-4" >Upload File</button>
+      <button onclick="window.location.replace('admin.html')" class="outline-none font-medium text-white ml-2 mr-2 border border-white   p-2 py-[6px] m-2 px-4" id="admin">Admin</button>
+
+      <button onclick="logout()" class="outline-none font-medium text-white ml-2 mr-2 border border-white   p-2 py-[6px] m-2 px-4">Logout</button>
+    </div>
+    <div class="mx-auto my-auto flex flex-col p-2 px-8 ">
+
+        <a href="forms/AssemblyForm.html" class="text-md p-2 px-0 px-5  hover:text-blue-500 transition-all ease-linear duration-150 cursor-pointer">Assembly Form -></a>
+        <a href="forms/QCForm.html" class="text-md  p-2 px-0 hover:text-blue-500 px-5 transition-all ease-linear duration-150 cursor-pointer">QC Form -></a>
+        <a href="forms/ActivityForm.html" class="text-md  p-2 px-0 hover:text-blue-500 px-5 transition-all ease-linear duration-150 cursor-pointer">Activity Form -></a>
+     
+    </div>
+
+  </div>
+      <div id="notlogged">
+          Not Logged In. Access Denied
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+      <script>
+           const firebaseConfig = {
+      apiKey: "AIzaSyB4BuDJvPnZG5FS51jAfuOGnnXGyyFwvfY",
+      authDomain: "auformproject.firebaseapp.com",
+      databaseURL: "https://auformproject-default-rtdb.firebaseio.com",
+      projectId: "auformproject",
+      storageBucket: "auformproject.appspot.com",
+      messagingSenderId: "466460203182",
+      appId: "1:466460203182:web:c26f232654d7a18fc6b53f"
+    };
+  
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+   const db = firebaseApp.database();
+
+
+    
+   const auth = firebaseApp.auth();
+   auth.onAuthStateChanged(i => {
+  if (!i) {
+      document.getElementById('formie').classList.add('hidden');
+      document.getElementById('notlogged').classList.remove('hidden');
+
+  } else {
+
+    if (i.email=='admin@thetvs.com'){
+      document.getElementById('admin').classList.remove('hidden');
+    }
+    else{
+      document.getElementById('admin').classList.add('hidden');
+
+    }
+    document.getElementById('formie').classList.remove('hidden');
+    document.getElementById('notlogged').classList.add('hidden');
+  }
+});
+
+function logout(){
+    firebase.auth().signOut();
+    window.location.replace('index.html')
+}
+
+  
+          </script>
+
+</body>

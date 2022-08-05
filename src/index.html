@@ -1,0 +1,112 @@
+<!doctype html>
+<head>
+    <link href="dist/output.css" rel="stylesheet"></script>
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body class="bg-white flex flex-row items-center content-center py-20">
+<div class="logincontainer mx-auto my-auto">
+    <form class="w-full max-w-sm ">
+        <div class="md:flex-col md:items-center mb-4">
+          <div class="">
+            <label class="block text-gray-500 font-bold md:text-left mb-2 md:mb-2 pr-4" for="id">
+                Employee ID
+            </label>
+          </div>
+          <div class="">
+            <input id="id" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"  type="text">
+          </div>
+        </div>
+        <div class="md:flex-col md:items-center mb-4">
+          <div class="">
+            <label class="block text-gray-500 font-bold md:text-left mb-2 md:mb-2 pr-4" for="pass">
+              Password
+            </label>
+          </div>
+          <div class="">
+            <input id="pass" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"  type="password" placeholder="******************">
+          </div>
+        </div>
+        
+        <div class="md:flex-col md:items-center">
+          
+            <button onclick="signin()" class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+              Sign Up
+            </button>
+          
+      </form>
+</div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+
+<script>
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4BuDJvPnZG5FS51jAfuOGnnXGyyFwvfY",
+      authDomain: "auformproject.firebaseapp.com",
+      databaseURL: "https://auformproject-default-rtdb.firebaseio.com",
+      projectId: "auformproject",
+      storageBucket: "auformproject.appspot.com",
+      messagingSenderId: "466460203182",
+      appId: "1:466460203182:web:c26f232654d7a18fc6b53f"
+    };
+  
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+   const db = firebaseApp.database();
+   var  dbref = firebase.database()
+
+   const auth = firebaseApp.auth();
+
+    </script>
+    <script>
+
+  
+
+auth.onAuthStateChanged(i => {
+  if (i) {
+      window.location.replace('forms.html')
+  } else {
+  }
+});
+    function signin(){
+eid=document.getElementById("id").value;
+passw=document.getElementById("pass").value
+        console.log(eid, passw);
+
+        
+auth.signInWithEmailAndPassword(eid, passw)
+  .then((userCredential) => {
+    
+    const user = userCredential.user;
+    dbref.ref('ok').set("hello")
+    localStorage.setItem('uemail',user.email.replace('@thetvs.com',''))
+   
+    window.location.replace('forms.html')
+
+    
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+  
+  document.getElementById("id").value='';
+        document.getElementById("pass").value='';
+
+    }
+
+
+
+    
+  </script>
+  <script>
+
+  </script>
+</html>
