@@ -53,15 +53,30 @@ else{
     document.getElementById('notlogged').classList.add('hidden');
 
  
-    var um=localStorage.getItem('uemail').replace('vplvl','')
-    console.log(um)
+    var um;
+    if(localStorage.getItem('uemail').includes('vplvl')){
 
-    firebase.database().ref('/forms/'+um).once('value', function(snap){
+    um=localStorage.getItem('uemail').replace('vplvl','')
+    }
+    else{
+      um=''
+    }
+    console.log(um)
+   
+
+    firebase.database().ref('forms/'+um).once('value', function(snap){
     Object.keys(snap.val()).forEach(function(key) {
       console.log(key)
+      var a;
 document.getElementById('responses').insertAdjacentHTML('beforeend', "<h1 class='hover:text-blue-400 duration-100 cursor-pointer ease-linear transition-all' id="+key+">"+key+"</h1>");
+if(localStorage.getItem('uemail').includes('vplvl')){
+a=key;
 
-document.getElementById(key).addEventListener('click', function() { getData(key) })
+}
+else{
+  a='';
+}
+document.getElementById(key).addEventListener('click', function() { getData(a) })
 
     
 });
@@ -70,10 +85,15 @@ document.getElementById(key).addEventListener('click', function() { getData(key)
   }
   
 });
-var um=localStorage.getItem('uemail').replace('vplvl','')
-
+var um;
+if(localStorage.getItem('uemail').includes('vplvl')){
+um='/'+localStorage.getItem('uemail').replace('vplvl','')+'/'
+}
+else{
+  um=''
+}
 function getData(a){
-    firebase.database().ref('/forms/'+um+'/'+a).once('value', function(snap){
+    firebase.database().ref('forms/'+um+a).once('value', function(snap){
         console.log(JSON.stringify(snap.val()));
         document.getElementById('jsondata').innerHTML=JSON.stringify(snap.val());
         
