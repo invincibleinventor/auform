@@ -5,25 +5,27 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+<style>
+    
+</style>
 </head>
 <body class="bg-white flex flex-col items-center content-center sm:py-20 ">
     <form class="mx-auto my-auto" id="formie">
         <div class="px-6 py-4 bg-purple-500 sm:rounded-t-md">
-        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Assembly Form</h3>
-        <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of your class assembly</p>
+        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Music Form</h3>
+        <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding your activity</p>
     </div>
         <div class=" overflow-hidden">
             
           <div class="px-4 py-5 bg-white sm:p-6 sm:pt-2">
               
             <div class="col-span-6 sm:col-span-3  py-3">
-              <label for="first-name" class="block text-sm font-medium text-gray-700">Teacher In Charge</label>
-              <input type="text" id="teacher-name" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              <label for="first-name" class="block text-sm font-medium text-gray-700">Date</label>
+              <input type="text" id="date" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             </div>
             <div class="col-span-6 sm:col-span-3  py-3">
-              <label for="first-name" class="block text-sm font-medium text-gray-700">Duration</label>
-              <input type="text" id="duration" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              <label for="first-name" class="block text-sm font-medium text-gray-700">No of Periods</label>
+              <input type="text" id="periods" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
             </div>
 
             <div class="grid grid-cols-6 gap-6 py-3">
@@ -31,10 +33,7 @@
                 <label for="first-name" class="block text-sm font-medium text-gray-700">No of Participants</label>
                 <input type="text" id="nop" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
-              <div class="col-span-6 sm:col-span-3  py-3">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">No of Attendees</label>
-                <input type="text" id="attendees" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
+              
               <div class="col-span-6 sm:col-span-3">
                 <label for="month" class="block text-sm font-medium text-gray-700">Month</label>
                 <select name="month" id="month">
@@ -57,44 +56,11 @@
             
             </div>
               
-              <div class="col-span-6 sm:col-span-3">
-                <label for="class" class="block text-sm font-medium text-gray-700">Class</label>
-
-                <select name="class" id="class">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  
-                </select>
-              </div>
               
-              <div class="col-span-6 sm:col-span-3">
-                <label for="section" class="block text-sm font-medium text-gray-700">Section</label>
-                <select name="section" id="section">
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                  <option value="D">D</option>
-                  <option value="E">E</option>
-                  <option value="F">F</option>
-                  <option value="G">G</option>
-                  <option value="H">H</option>
-                  <option value="I">I</option>
-                  
-               
+              
                 
-              </select>       
             
-            </div>
+           
             <div class="col-span-6 sm:col-span-3">
               <label for="level" class="block text-sm font-medium text-gray-700">Level</label>
               <select name="level" id="level">
@@ -114,14 +80,10 @@
             </div>
             
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Assembly Topic</label>
-                <input type="text"  id="topic"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Music</label>
+                <input type="text"  id="subject"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
-              <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Members</label>
-                <input type="text" id="members" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-              
+            
           </div>
           <div class="px-4 py-5 rounded-b-md bg-gray-50 text-right sm:px-6">
             <button onclick="postdata()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
@@ -152,19 +114,11 @@
    console.log(localStorage.getItem('uemail'))
 
 
-   var fileName = 'AssemblyForm';
+   var fileName = 'MusicForm';
 
 var dref = firebase.database().ref('forms/'+fileName+'/'+localStorage.getItem('uemail'));
 
-dref.once("value")
-  .then(function(snapshot) {
-   
-    var b = snapshot.child("teacherName").exists(); 
-    
-    
-  });
 
-var dref;
    auth.onAuthStateChanged(i => {
   if (!i) {
     document.getElementById('formie').classList.add('hidden');
@@ -187,21 +141,16 @@ else {
 
 function postdata(){
   dref.set({
-  teacherName: document.getElementById('teacher-name').value,
-  class: document.getElementById('class').value,
+  date: document.getElementById('date').value,
 
   level: document.getElementById('level').value,
   month: document.getElementById('month').value,
   no_of_participants: document.getElementById('nop').value,
-  no_of_attendees: document.getElementById('attendees').value,
-  duration: document.getElementById('duration').value,
-  month: document.getElementById('month').value,
-  month: document.getElementById('month').value,
+  no_of_periods: document.getElementById('periods').value,
   month: document.getElementById('month').value,
 
-   section: document.getElementById('section').value,
-topic: document.getElementById('topic').value,
- members: document.getElementById('members').value
+
+subject: document.getElementById('subject').value,
   })
   .then(function() {
     return ref.once("value");
@@ -210,15 +159,10 @@ topic: document.getElementById('topic').value,
     var data = snapshot.val(); // data === "hello"
   });
 
-  document.getElementById('teacher-name').value=''
-  document.getElementById('class').value=''
   document.getElementById('level').value=''
   document.getElementById('nop').value=''
-document.getElementById('attendees').value=''
-document.getElementById('duration').value=''
-   document.getElementById('section').value=''
-document.getElementById('topic').value=''
- document.getElementById('members').value=''
+document.getElementById('periods').value=''
+document.getElementById('subject').value=''
  document.getElementById('formie').classList.add('hidden');
  document.getElementById('notlogged').classList.remove('hidden');
  document.getElementById('notlogged').value='Already Responded';

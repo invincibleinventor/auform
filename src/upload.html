@@ -18,12 +18,27 @@
         <form class="flex flex-col "> 
             
 <div class="my-3">
-              <label for="folder " class="mr-3 text-sm font-semibold bg-blue-50 text-blue-700 rounded-full px-4 py-2">Choose a folder</label>
+              <label for="folder " class="mr-3 my-2 text-sm font-semibold bg-blue-50 text-blue-700 rounded-full px-4 py-2">Choose a folder</label>
 
-<select name="folder" id="folder">
+<select class="my-5" name="folder" id="folder">
   <option value="Assembly">Assembly</option>
   <option value="QC">QC</option>
   <option value="Activities">Activities</option>
+  <option value="Events">Events</option>
+  <option value="Enrichment">Enrichment</option>
+  <option value="Drawing">Drawing</option>
+  <option value="Yoga">Yoga</option>
+  <option value="Music">Music</option>
+  <option value="Drama">Drama</option>
+  
+</select>
+<label for="level " class="mr-3 my-2 text-sm font-semibold bg-blue-50 text-blue-700 rounded-full px-4 py-2">Choose a Level</label>
+
+<select class="my-5" name="level" id="level">
+  <option value="level1">Level 1</option>
+  <option value="level2">Level 2</option>
+  <option value="level3">Level 3</option>
+  <option value="">All / NaN</option>
   
 </select>
 </div>
@@ -93,7 +108,7 @@ document.getElementById("send").addEventListener("click", function() {
 
       for (let i = 0; i < files.length; i++) {
 
-        var storage = firebase.storage().ref(document.getElementById("folder").value+'/'+files[i].name);
+        var storage = firebase.storage().ref(document.getElementById("folder").value+'/'+document.getElementById("level").value+'/'+files[i].name);
 
         var upload = storage.put(files[i]);
 
