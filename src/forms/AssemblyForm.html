@@ -8,7 +8,7 @@
 
 </head>
 <body class="bg-white flex flex-col items-center content-center sm:py-20 ">
-    <form class="mx-auto my-auto" id="formie">
+    <form class="mx-auto w-screen md:w-auto my-auto" id="formie">
         <div class="px-6 py-4 bg-purple-500 sm:rounded-t-md">
         <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Assembly Form</h3>
         <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of your class assembly</p>
@@ -96,7 +96,7 @@
             
             </div>
             <div class="col-span-6 sm:col-span-3">
-              <label for="level" class="block text-sm font-medium text-gray-700">Level</label>
+              <label for="level" class="block text-sm font-medium text-gray-700" onchange="onChange()">Level</label>
               <select name="level" id="level">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -129,8 +129,7 @@
         </div>
       </form>
       <div id="notlogged" class="py-20 sm:py-0">
-          Not Logged In. Access Denied
-      </div>
+        <h1 id="lex">Not Logged In. Access Denied</h1>      </div>
       
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
@@ -150,26 +149,38 @@
    const db = firebaseApp.database();
    const auth = firebase.auth();
    console.log(localStorage.getItem('uemail'))
-
-
    var fileName = 'AssemblyForm';
-
-var dref = firebase.database().ref('forms/'+fileName+'/'+localStorage.getItem('uemail'));
-
-dref.once("value")
+   var uemail = localStorage.getItem('uemail');
+   var bef = firebase.database().ref("forms/")
+bef.once("value")
   .then(function(snapshot) {
-   
-    var b = snapshot.child("teacherName").exists(); 
+    var a = snapshot.child("1/"+fileName+'/'+uemail).exists(); 
     
-    
+    var b = snapshot.child("2/"+fileName+'/'+uemail).exists(); 
+    var c = snapshot.child("3/"+fileName+'/'+uemail).exists(); 
+console.log(a, b, c);
+
+
+  if(!(a==true || b==true || c==true)){
+
+var lvl=1;
+dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getItem('uemail'));
+
+
+
+   document.getElementById('level').addEventListener('change', function() {
+    lvl=this.value;
+    dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getItem('uemail'));
+    console.log(dref);
+    console.log(lvl);
+
   });
 
-var dref;
    auth.onAuthStateChanged(i => {
   if (!i) {
     document.getElementById('formie').classList.add('hidden');
       document.getElementById('notlogged').classList.remove('hidden');
-      document.getElementById('notlogged').value = 'Not logged in. Access denied';
+      document.getElementById('notlogged').value = 'Access denied';
 
 } 
 else {
@@ -182,7 +193,14 @@ else {
   }
 });
 
+  }
+  else{
+    document.getElementById('formie').classList.add('hidden');
+      document.getElementById('notlogged').classList.remove('hidden');
+      document.getElementById('lex').textContent = 'Submitted';
+  }
 
+});
 
 
 function postdata(){

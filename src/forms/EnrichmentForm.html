@@ -10,7 +10,7 @@
 </style>
 </head>
 <body class="bg-white flex flex-col items-center content-center sm:py-20 ">
-    <form class="mx-auto my-auto" id="formie">
+    <form class="mx-auto w-screen md:w-auto my-auto" id="formie">
         <div class="px-6 py-4 bg-purple-500 sm:rounded-t-md">
         <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Enrichment Form</h3>
         <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of your enrichment class</p>
@@ -109,7 +109,7 @@
         </div>
       </form>
       <div id="notlogged" class="py-20 sm:py-0">
-          Not Logged In. Access Denied
+         <h1 id="lex">Access Denied </h1>
       </div>
       
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
@@ -133,15 +133,37 @@
 
 
    var fileName = 'EnrichmentForm';
+var uemail = localStorage.getItem('uemail');
+   var bef = firebase.database().ref("forms/")
+bef.once("value")
+  .then(function(snapshot) {
+    var a = snapshot.child("1/"+fileName+'/'+uemail).exists(); 
+    
+    var b = snapshot.child("2/"+fileName+'/'+uemail).exists(); 
+    var c = snapshot.child("3/"+fileName+'/'+uemail).exists(); 
+console.log(a, b, c);
 
-var dref = firebase.database().ref('forms/'+fileName+'/'+localStorage.getItem('uemail'));
 
+  if(!(a==true || b==true || c==true)){
+
+var lvl=1;
+dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getItem('uemail'));
+
+
+
+   document.getElementById('level').addEventListener('change', function() {
+    lvl=this.value;
+    dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getItem('uemail'));
+    console.log(dref);
+    console.log(lvl);
+
+  });
 
    auth.onAuthStateChanged(i => {
   if (!i) {
     document.getElementById('formie').classList.add('hidden');
       document.getElementById('notlogged').classList.remove('hidden');
-      document.getElementById('notlogged').value = 'Not logged in. Access denied';
+      document.getElementById('notlogged').value = 'Access denied';
 
 } 
 else {
@@ -154,8 +176,14 @@ else {
   }
 });
 
+  }
+  else{
+    document.getElementById('formie').classList.add('hidden');
+      document.getElementById('notlogged').classList.remove('hidden');
+      document.getElementById('lex').textContent = 'Submitted';
+  }
 
-
+});
 
 function postdata(){
   dref.set({

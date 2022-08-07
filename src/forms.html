@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white flex flex-col   ">
   <div id="formie">
-    <div class=" px-3 sm:px-4 bg-purple-500 flex flex-row content-center items-center"><h1 class="text-white font-medium sm:font-semibold sm:text-xl">Welcome!</h1>
-      <button onclick="window.location.replace('upload.html')" class="outline-none font-medium text-white ml-auto mr-2 border-1 border-white  text-sm md:text-md p-2 py-[6px] m-2 px-4" >Upload File</button>
-      <button onclick="window.location.replace('admin.html')" class="outline-none font-medium text-white ml-2 mr-2 border border-white  text-sm md:text-md p-2 py-[6px] m-2 px-4" id="admin">Admin</button>
+    <div class=" px-3 sm:px-4 bg-purple-500 flex flex-row content-center items-center"><h1 class="text-white font-medium sm:font-semibold sm:text-xl font-jost">Welcome!</h1>
+      <button onclick="window.location.replace('upload.html')" class="outline-none font-medium text-white ml-auto mr-2 border-1 border-white  text-sm md:text-md font-jost p-2 py-[6px] m-2 px-4" >Upload File</button>
+      <button onclick="window.location.replace('admin.html')" class="outline-none font-medium text-white ml-2 mr-2 border border-white  text-sm md:text-md p-2 py-[6px] m-2 px-4 font-jost" id="admin">Admin</button>
 
-      <button onclick="logout()" class="outline-none font-medium text-white ml-2 mr-2 border border-white  text-sm md:text-md p-2 py-[4px] m-2 px-4">Logout</button>
+      <button onclick="logout()" class="outline-none font-medium text-white ml-2 mr-2 border border-white  text-sm md:text-md p-2 py-[4px] m-2 px-4 py-[7px] font-jost">Logout</button>
     </div>
       <ul class="bg-white rounded-lg border border-gray-200 w-96  my-auto flex flex-col p-2 px-0 text-gray-900">
 
 
-        <a href="forms/AssemblyForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Assembly Form -></a>
-        <a href="forms/QCForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">QC Form -></a>
-        <a href="forms/ActivityForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Activity Form -></a>
-        <a href="forms/EnrichmentForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Enrichment Form -></a>
-        <a href="forms/EventsForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Events Form -></a>
-        <a href="forms/DrawingForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Drawing Form -></a>
-        <a href="forms/DramaForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Drama Form -></a>
-        <a href="forms/MusicForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Music Form -></a>
-        <a href="forms/YogaForm.html" class="px-6 py-2  border-gray-200 w-full rounded-t-lg">Yoga Form -></a>
+        <a href="forms/AssemblyForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Assembly Form -></a>
+        <a href="forms/QCForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">QC Form -></a>
+        <a href="forms/ActivityForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Activity Form -></a>
+        <a href="forms/EnrichmentForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Enrichment Form -></a>
+        <a href="forms/EventsForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Events Form -></a>
+        <a href="forms/DrawingForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Drawing Form -></a>
+        <a href="forms/DramaForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Drama Form -></a>
+        <a href="forms/MusicForm.html" class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg font-jost">Music Form -></a>
+        <a href="forms/YogaForm.html" class="px-6 py-2  border-gray-200 w-full rounded-t-lg font-jost">Yoga Form -></a>
      
       </ul>
 
@@ -61,7 +63,7 @@
 
   } else {
 
-    if (i.email=='admin@thetvs.com'){
+    if (i.email=='admin@thetvs.com' || i.email=='vplvl1@thetvs.com' || i.email=='vplvl2@thetvs.com' || i.email=='vplvl3@thetvs.com'){
       document.getElementById('admin').classList.remove('hidden');
     }
     else{
