@@ -36,7 +36,7 @@
 </select>
 <label for="level" class="mr-3 my-2 text-sm font-semibold text-blue-700 font-inter rounded-full px-1 lg:px-4 lg:pl-1   py-2">Choose your level</label>
 
-<select class=" my-3 mt-3 lg:my-5 lg:mt-2 lg:mb-5" name="level" id="level">
+<select class=" my-3 mt-3 lg:my-5 lg:mt-2 lg:mb-2" name="level" id="level">
   <option value="level1">Level 1</option>
   <option value="level2">Level 2</option>
   <option value="level3">Level 3</option>
@@ -44,7 +44,12 @@
   
 </select>
 </div>
-<label class="block mb-3">
+
+<div class="col-span-6 sm:col-span-3 lg:mb-5 mb-3 ">
+  <label for="caption" class="mr-3 my-2 text-sm font-semibold text-blue-700 font-inter rounded-full px-1 lg:px-4 lg:pl-1   py-2">Caption</label>
+  <input type="text" id="caption" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+</div>
+<label class="block mt-3 mb-3">
     <span class="sr-only ">Choose File</span>
     <input type="file" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" id="files"/>
   </label>
@@ -112,7 +117,8 @@ document.getElementById("send").addEventListener("click", function() {
 
         var storage = firebase.storage().ref(document.getElementById("folder").value+'/'+document.getElementById("level").value+'/'+files[i].name);
 
-        var upload = storage.put(files[i]);
+        var upload = storage.put(files[i],{  customMetadata: {
+'caption': document.getElementById('caption').value}});
 
         upload.on(
           "state_changed",
