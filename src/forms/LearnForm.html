@@ -11,34 +11,20 @@
 </head>
 <body class="bg-white flex flex-col items-center content-center sm:py-20 ">
     <form class="mx-auto w-screen md:w-auto my-auto" id="formie">
-        <div class="px-6 py-4 bg-blue-500 sm:rounded-t-md">
-        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Events Form</h3>
-        <p class="mt-1  text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of your events</p>
+        <div class="px-6 py-4 bg-purple-500 sm:rounded-t-md">
+        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Learning Approach Form</h3>
+        <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding your learning approach programme</p>
     </div>
         <div class=" overflow-hidden">
             
           <div class="px-4 py-5 bg-white sm:p-6 sm:pt-2">
-              
-            <div class="col-span-6 sm:col-span-3  py-3">
-              <label for="first-name" class="block text-sm font-medium text-gray-700">Date</label>
-              <input type="text" id="date" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-            </div>
-            <div class="col-span-6 sm:col-span-3  py-3">
-              <label for="first-name" class="block text-sm font-medium text-gray-700">Duration</label>
-              <input type="text" id="duration" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-            </div>
-
+            <div class="col-span-6 sm:col-span-3 py-3">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Learning Approach</label>
+                <input type="text"  id="learn"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
             <div class="grid grid-cols-6 gap-6 py-3">
-              <div class="col-span-6 sm:col-span-3  py-3">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">No of Participants</label>
-                <input type="text" id="nop" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-              <div class="col-span-6 sm:col-span-3  py-3">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">Event Name</label>
-                <input type="text" id="event-name" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-              
-              <div class="col-span-6 sm:col-span-3">
+
+            <div class="col-span-6 sm:col-span-3">
                 <label for="month" class="block text-sm font-medium text-gray-700">Month</label>
                 <select name="month" id="month">
                   <option value="1">Jan</option>
@@ -59,6 +45,14 @@
                   
             
             </div>
+            <div class="col-span-6 sm:col-span-3">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Duration</label>
+              <input type="text" id="duration" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+
+            
+              
+            
               
               <div class="col-span-6 sm:col-span-3">
                 <label for="class" class="block text-sm font-medium text-gray-700">Class</label>
@@ -99,23 +93,24 @@
               
 
               
-            </div>
+    </div>
+            
             
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Addressed By</label>
-                <input type="text"  id="addressed"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Theme</label>
+                <input type="text"  id="theme"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">As in charge</label>
-                <input type="text"  id="incharge"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Subject</label>
+                <input type="text"  id="subject"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Event organizer</label>
-                <input type="text"  id="event-organizer"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">No of activities</label>
+                <input type="text"  id="noactivities"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Remarks</label>
-                <input type="text"  id="remarks"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">List of activities</label>
+                <input type="text"  id="listactivities"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
             
           </div>
@@ -123,9 +118,11 @@
             <button onclick="postdata()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
           </div>
         </div>
+    </div>
+
       </form>
       <div id="notlogged" class="py-20 sm:py-0">
-        <h1 id="lex">Not Logged In. Access Denied</h1>
+         <h1 id="lex">Access Denied </h1>
       </div>
       
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
@@ -148,9 +145,8 @@
    console.log(localStorage.getItem('uemail'))
 
 
-   var fileName = 'EventsForm';
-
-   var uemail = localStorage.getItem('uemail');
+   var fileName = 'LearningForm';
+var uemail = localStorage.getItem('uemail');
    var bef = firebase.database().ref("forms/")
 bef.once("value")
   .then(function(snapshot) {
@@ -202,23 +198,20 @@ else {
 
 });
 
-
-
 function postdata(){
   dref.set({
-  date: document.getElementById('date').value,
   class: document.getElementById('class').value,
-  event_name: document.getElementById('event-name').value,
 
   level: document.getElementById('level').value,
   month: document.getElementById('month').value,
-  no_of_participants: document.getElementById('nop').value,
+  subject: document.getElementById('subject').value,
   duration: document.getElementById('duration').value,
-  addressed_by: document.getElementById('addressed').value,
-incharge: document.getElementById('incharge').value,
-  event_organizer: document.getElementById('event-organizer').value,
-  remarks: document.getElementById('remarks').value,
+  theme: document.getElementById('theme').value,
+  learningApproach: document.getElementById('learn').value,
 
+
+  numberActivities: document.getElementById('noactivities').value,
+  listActivities: document.getElementById('listactivities').value,
   })
   .then(function() {
     return ref.once("value");
@@ -229,13 +222,13 @@ incharge: document.getElementById('incharge').value,
 
   document.getElementById('class').value=''
   document.getElementById('level').value=''
-  document.getElementById('nop').value=''
+  document.getElementById('month').value=''
 document.getElementById('duration').value=''
-document.getElementById('event-name').value=''
-document.getElementById('addressed').value=''
-document.getElementById('incharge').value=''
-document.getElementById('event-organizer').value=''
-document.getElementById('remarks').value=''
+document.getElementById('subject').value=''
+document.getElementById('learn').value=''
+document.getElementById('noactivities').value=''
+document.getElementById('theme').value=''
+document.getElementById('listactivities').value=''
  document.getElementById('formie').classList.add('hidden');
  document.getElementById('notlogged').classList.remove('hidden');
  document.getElementById('notlogged').value='Already Responded';

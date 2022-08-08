@@ -11,9 +11,9 @@
 </head>
 <body class="bg-white flex flex-col items-center content-center sm:py-20 ">
     <form class="mx-auto w-screen md:w-auto my-auto" id="formie">
-        <div class="px-6 py-4 bg-blue-500 sm:rounded-t-md">
-        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Events Form</h3>
-        <p class="mt-1  text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of your events</p>
+        <div class="px-6 py-4 bg-purple-500 sm:rounded-t-md">
+        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Reading Form</h3>
+        <p class="mt-1  text-xs sm:text-sm text-neutral-100 mb-1 leading-6">Please fill this form regarding the details of reading skill tes</p>
     </div>
         <div class=" overflow-hidden">
             
@@ -34,8 +34,8 @@
                 <input type="text" id="nop" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="col-span-6 sm:col-span-3  py-3">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">Event Name</label>
-                <input type="text" id="event-name" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Subject</label>
+                <input type="text" id="subject" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               
               <div class="col-span-6 sm:col-span-3">
@@ -101,18 +101,12 @@
               
             </div>
             
+              
               <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Addressed By</label>
-                <input type="text"  id="addressed"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Topic</label>
+                <input type="text"  id="topic"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
-              <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">As in charge</label>
-                <input type="text"  id="incharge"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-              <div class="col-span-6 sm:col-span-3 py-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Event organizer</label>
-                <input type="text"  id="event-organizer"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
+             
               <div class="col-span-6 sm:col-span-3 py-3">
                 <label for="last-name" class="block text-sm font-medium text-gray-700">Remarks</label>
                 <input type="text"  id="remarks"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
@@ -148,7 +142,7 @@
    console.log(localStorage.getItem('uemail'))
 
 
-   var fileName = 'EventsForm';
+   var fileName = 'ReadingForm';
 
    var uemail = localStorage.getItem('uemail');
    var bef = firebase.database().ref("forms/")
@@ -208,15 +202,13 @@ function postdata(){
   dref.set({
   date: document.getElementById('date').value,
   class: document.getElementById('class').value,
-  event_name: document.getElementById('event-name').value,
+  subject: document.getElementById('subject').value,
 
   level: document.getElementById('level').value,
   month: document.getElementById('month').value,
   no_of_participants: document.getElementById('nop').value,
   duration: document.getElementById('duration').value,
-  addressed_by: document.getElementById('addressed').value,
-incharge: document.getElementById('incharge').value,
-  event_organizer: document.getElementById('event-organizer').value,
+  topic: document.getElementById('topic').value,
   remarks: document.getElementById('remarks').value,
 
   })
@@ -231,10 +223,11 @@ incharge: document.getElementById('incharge').value,
   document.getElementById('level').value=''
   document.getElementById('nop').value=''
 document.getElementById('duration').value=''
-document.getElementById('event-name').value=''
-document.getElementById('addressed').value=''
-document.getElementById('incharge').value=''
-document.getElementById('event-organizer').value=''
+document.getElementById('topic').value=''
+document.getElementById('subject').value=''
+document.getElementById('date').value=''
+document.getElementById('month').value=''
+
 document.getElementById('remarks').value=''
  document.getElementById('formie').classList.add('hidden');
  document.getElementById('notlogged').classList.remove('hidden');
