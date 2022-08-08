@@ -849,10 +849,6 @@ select {
   height: 100vh;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-auto {
   width: auto;
 }
@@ -861,8 +857,8 @@ select {
   width: 100%;
 }
 
-.min-w-0 {
-  min-width: 0px;
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-sm {
@@ -992,14 +988,14 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .py-\[6px\] {
@@ -1010,6 +1006,11 @@ select {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-20 {
@@ -1248,7 +1249,7 @@ select:focus {
   font-family: 'Inter';
 }
 
-code {
+.code {
   font-family: 'Source Code Pro', monospace;
   display: block;
   background-color: white;

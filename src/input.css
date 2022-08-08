@@ -15,7 +15,7 @@ select{
 .font-inter{
   font-family: 'Inter';
 }
-code {
+.code {
   font-family: 'Source Code Pro', monospace;
   display: block;
   background-color: white;
