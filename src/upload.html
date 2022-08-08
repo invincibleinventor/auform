@@ -4,23 +4,25 @@
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-white flex flex-col   ">
   <div id="formie">
-    <div class=" px-3 sm:px-4 bg-purple-500 flex flex-row content-center items-center"><h1 class="text-white font-medium sm:font-semibold sm:text-xl">Upload</h1>
-      <button onclick="window.location.replace('forms.html')" class="outline-none font-medium text-white ml-auto mr-2 border-1 border-white   p-2 py-[6px] m-2 px-4"><- Back</button>
-      <button onclick="logout()" class="outline-none font-medium text-white ml-2 mr-2 border border-white   p-2 py-[6px] m-2 px-4">Logout</button>
+    <div class=" px-6 pr-3 sm:px-4 sm:pr-4 bg-blue-500 flex flex-row content-center items-center lg:py-0 -py-2 border-b border-neutral-100 "><h1 class="text-white font-inter font-medium sm:font-semibold ">Upload</h1>
+      <button onclick="window.location.replace('forms.html')" class="outline-none font-medium text-white ml-auto mr-2 border-1 border-white   p-2 py-[6px] m-2 px-4 font-inter ">Back</button>
+      <button onclick="logout()" class="outline-none font-medium text-blue-500  ml-2 mr-2 bg-white  font-inter p-2 py-[6px] m-2 px-5">Logout</button>
     </div>
-    <div class="mx-auto my-auto flex flex-col p-2 px-8 ">
+    <div class=" my-auto flex flex-col p-2 px-8 lg:w-1/3 ">
 
         <form class="flex flex-col "> 
             
 <div class="my-3">
-              <label for="folder " class="mr-3 my-2 text-sm font-semibold bg-blue-50 text-blue-700 rounded-full px-4 py-2">Choose a folder</label>
+              <label for="folder " class="mr-3 my-2 text-sm font-semibold font-inter text-blue-700 rounded-full px-1 lg:px-1 py-2">Choose a folder</label>
 
-<select class="my-5" name="folder" id="folder">
+<select class=" my-3 mt-3 lg:my-5 lg:mt-2 lg:mb-5 mb-5" name="folder" id="folder">
   <option value="Assembly">Assembly</option>
   <option value="QC">QC</option>
   <option value="Activities">Activities</option>
@@ -32,9 +34,9 @@
   <option value="Drama">Drama</option>
   
 </select>
-<label for="level " class="mr-3 my-2 text-sm font-semibold bg-blue-50 text-blue-700 rounded-full px-4 py-2">Choose a Level</label>
+<label for="level" class="mr-3 my-2 text-sm font-semibold text-blue-700 font-inter rounded-full px-1 lg:px-4 lg:pl-1   py-2">Choose your level</label>
 
-<select class="my-5" name="level" id="level">
+<select class=" my-3 mt-3 lg:my-5 lg:mt-2 lg:mb-5" name="level" id="level">
   <option value="level1">Level 1</option>
   <option value="level2">Level 2</option>
   <option value="level3">Level 3</option>
@@ -46,7 +48,7 @@
     <span class="sr-only ">Choose File</span>
     <input type="file" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" id="files"/>
   </label>
-<button id="send"  class="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+<button id="send"  class="w-full shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none font-inter text-white font-bold py-2 px-4 mt-5" type="button">
     Upload
   </button>
 
