@@ -147,7 +147,6 @@
     const firebaseApp = firebase.initializeApp(firebaseConfig);
    const db = firebaseApp.database();
    const auth = firebase.auth();
-   console.log(localStorage.getItem('uemail'))
 
 
    var fileName = 'ActivityForm';
@@ -159,7 +158,6 @@ bef.once("value")
     
     var b = snapshot.child("2/"+fileName+'/'+uemail).exists(); 
     var c = snapshot.child("3/"+fileName+'/'+uemail).exists(); 
-console.log(a, b, c);
 
 
   if(!(a==true || b==true || c==true)){

@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<style>
+
+</style>
 </head>
-<body class="bg-white flex flex-col  ">
+<body class="bg-white h-screen w-screen   ">
     <div class="" id="formie">
        <div id="responses">
+        <h1 class='hover:text-blue-400 hidden duration-100 cursor-pointer ease-linear transition-all' id="show">Show Data</h1>
        </div>
-       <code class="block" id="jsondata">
+       <code class="min-w-0" id="jsondata">
 
        </code>
 
@@ -37,7 +41,6 @@
     const firebaseApp = firebase.initializeApp(firebaseConfig);
    const db = firebaseApp.database();
    uemail=localStorage.getItem('uemail')
-console.log(typeof(uemail))
    const auth = firebaseApp.auth();
    auth.onAuthStateChanged(i => {
 
@@ -66,17 +69,22 @@ else{
 
     firebase.database().ref('forms/'+um).once('value', function(snap){
     Object.keys(snap.val()).forEach(function(key) {
-      console.log(key)
-      var a;
-document.getElementById('responses').insertAdjacentHTML('beforeend', "<h1 class='hover:text-blue-400 duration-100 cursor-pointer ease-linear transition-all' id="+key+">"+key+"</h1>");
+      var a='';
+      var us='';
 if(localStorage.getItem('uemail').includes('vplvl')){
 a=key;
-
+us=key;
+document.getElementById('responses').insertAdjacentHTML('beforeend', "<h1 class='hover:text-blue-400 duration-100 cursor-pointer ease-linear transition-all' id="+key+">"+key+"</h1>");
+document.getElementById('show').classList.add('hidden')
 }
 else{
   a='';
+  us='show';
+
+document.getElementById('show').classList.remove('hidden');
 }
-document.getElementById(key).addEventListener('click', function() { getData(a) })
+
+document.getElementById(us).addEventListener('click', function() { getData(a) })
 
     
 });
@@ -85,7 +93,7 @@ document.getElementById(key).addEventListener('click', function() { getData(a) }
   }
   
 });
-var um;
+var um='';
 if(localStorage.getItem('uemail').includes('vplvl')){
 um='/'+localStorage.getItem('uemail').replace('vplvl','')+'/'
 }
@@ -93,14 +101,49 @@ else{
   um=''
 }
 function getData(a){
-    firebase.database().ref('forms/'+um+a).once('value', function(snap){
-        console.log(JSON.stringify(snap.val()));
-        document.getElementById('jsondata').innerHTML=JSON.stringify(snap.val());
+ 
+ if(um=='' && a==''){
+    firebase.database().ref('/forms/1').once('value', function(snap){
+      if(document.getElementById('jsondata').textContent.includes(JSON.stringify(snap.val()))){
+
+      }
+      else{
+document.getElementById('jsondata').textContent = document.getElementById('jsondata').textContent+JSON.stringify(snap.val())
+      }
+    });
+    firebase.database().ref('/forms/2').once('value', function(snap){
+      if(document.getElementById('jsondata').textContent.includes(JSON.stringify(snap.val()))){
+
+      }
+      else{
+document.getElementById('jsondata').textContent = document.getElementById('jsondata').textContent+JSON.stringify(snap.val())
+      }
+    });
+     
+    firebase.database().ref('/forms/3').once('value', function(snap){
+    if(document.getElementById('jsondata').textContent.includes(JSON.stringify(snap.val()))){
+    }
+   
+
+    else{
+document.getElementById('jsondata').textContent = document.getElementById('jsondata').textContent+JSON.stringify(snap.val())
+    }
+    });
+
+
+    
+  }
+        
+
+else{
+  firebase.database().ref('/forms'+um+a).once('value', function(snap){
+document.getElementById('jsondata').textContent = JSON.stringify(snap.val())
+    });
+}
         
 
 
       
-    })
 }
 
 

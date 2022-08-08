@@ -148,7 +148,6 @@
     const firebaseApp = firebase.initializeApp(firebaseConfig);
    const db = firebaseApp.database();
    const auth = firebase.auth();
-   console.log(localStorage.getItem('uemail'))
    var fileName = 'AssemblyForm';
    var uemail = localStorage.getItem('uemail');
    var bef = firebase.database().ref("forms/")
@@ -158,7 +157,6 @@ bef.once("value")
     
     var b = snapshot.child("2/"+fileName+'/'+uemail).exists(); 
     var c = snapshot.child("3/"+fileName+'/'+uemail).exists(); 
-console.log(a, b, c);
 
 
   if(!(a==true || b==true || c==true)){
@@ -171,8 +169,7 @@ dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getIte
    document.getElementById('level').addEventListener('change', function() {
     lvl=this.value;
     dref = firebase.database().ref('forms/'+lvl+'/'+fileName+'/'+localStorage.getItem('uemail'));
-    console.log(dref);
-    console.log(lvl);
+   
 
   });
 
