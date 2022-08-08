@@ -987,6 +987,16 @@ select {
   padding: 0.5rem;
 }
 
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -997,19 +1007,9 @@ select {
   padding-bottom: 6px;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .py-20 {
@@ -1057,10 +1057,6 @@ select {
 
 .text-right {
   text-align: right;
-}
-
-.font-jost {
-  font-family: Jost, sans-serif;
 }
 
 .text-sm {
@@ -1250,6 +1246,16 @@ select:focus {
 
 .font-inter{
   font-family: 'Inter';
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  display: block;
+  background-color: white;
+  color: #000000;
+  padding: 1em;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .file\:mr-4::-webkit-file-upload-button {

@@ -15,3 +15,12 @@ select{
 .font-inter{
   font-family: 'Inter';
 }
+code {
+  font-family: 'Source Code Pro', monospace;
+  display: block;
+  background-color: white;
+  color: #000000;
+  padding: 1em;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+ }
