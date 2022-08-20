@@ -70,7 +70,7 @@
 
 auth.onAuthStateChanged(i => {
   if (i) {
-      window.location.replace('forms.html')
+      window.location.replace('tabs.html')
   } else {
   }
 });
@@ -84,10 +84,10 @@ auth.signInWithEmailAndPassword(eid, passw)
   .then((userCredential) => {
     
     const user = userCredential.user;
-    dbref.ref('ok').set("hello")
+    dbref.ref('databaseStatus').set("active")
     localStorage.setItem('uemail',user.email.replace('@thetvs.com',''))
    
-    window.location.replace('forms.html')
+    window.location.replace('tabs.html')
 
     
   })

@@ -15,8 +15,8 @@
 <body class=" flex flex-col   ">
   <div id="formie">
     <div class=" px-4 pr-3 sm:px-4 sm:pr-4 bg-blue-500 flex flex-row content-center items-center lg:py-1 -py-2 border-b border-neutral-100 "><h1 class="text-white font-inter font-medium sm:font-semibold text-md lg:text-lg ">Welcome!</h1>
-      <button onclick="window.location.replace('upload.html')" class="outline-none my-auto font-medium text-white ml-auto mr-2  text-sm md:text-md font-inter p-2 py-[6px] m-2 " >Upload <span class="hidden md:inline-flex">File</span></button>
-      <button onclick="window.location.replace('admin.html')" class="outline-none my-auto font-medium text-white  mr-2   text-sm md:text-md p-2 py-[6px] m-2 font-inter" id="admin">Admin</button>
+      <button onclick="window.location.href='tabs.html'" class="outline-none my-auto font-medium text-white ml-auto mr-2  text-sm md:text-md font-inter p-2 py-[6px] m-2 " >Back</span></button>
+      <button onclick="window.location.href='admin.html'" class="outline-none my-auto font-medium text-white  mr-2   text-sm md:text-md p-2 py-[6px] m-2 font-inter" id="admin">Admin</button>
 
       <button onclick="logout()" class="outline-none font-medium text-white ml-2 mr-2 text-blue-500 bg-white rounded-xs  text-sm md:text-md p-2 py-[6px] m-2 px-4 font-inter">Logout</button>
     </div>
@@ -100,7 +100,7 @@
 
 function logout(){
     firebase.auth().signOut();
-    window.location.replace('index.html')
+    window.location.href='index.html'
 }
 
   

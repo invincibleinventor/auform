@@ -14,51 +14,60 @@
 </head>
 <body class=" flex flex-col   ">
   <div id="formie">
-    <div class=" px-4 pr-4 sm:px-4 sm:pr-4  flex flex-row content-center items-center lg:py-4 py-3 border-b border-neutral-100 "><h1 class="text-neutral-700 font-inter font-bold sm:font-bold font-jost text-md lg:text-lg ">Welcome!</h1>
-        <div class="flex flex-row text-neutral-700 items-center content-center ml-auto"><span class="iconify text-neutral-700 w-5 h-5" data-icon="ant-design:user"></span><span class="text-white font-medium mx-2"></span></div>
-      
-      </div>
-        <div class="grid grid-cols-2 py-4 px-3">
-            <button class="py-4 px-3 m-2 rounded-md flex flex-row items-center content-center bg-gradient-to-r from-blue-500 to-purple-400">
-                <span class="text-white font-semibold text-2xl iconify font-jost  ml-auto mr-2"  data-icon="ep:document">Forms</span>    
+    <div class=" px-6 pr-3 sm:px-4 sm:pr-4 bg-blue-500 flex flex-row content-center items-center py-1 border-b border-neutral-100 "><h1 class="text-white font-inter font-medium sm:font-semibold ">Welcome</h1>
+      <button onclick="logout()" class="outline-none font-medium text-blue-500  ml-auto mr-2 bg-white  font-inter py-[8px] md:py-[6px] m-2 px-4 text-sm md:text-md lg:text-md">Logout</button>
+    </div>
+      <div class="py-4">
+        <h1 class="text-neutral-700 font-inter font-bold sm:font-bold font-jost text-2xl md:text-3xl lg:text-4xl py-2 md:py-3 lg:py-4 lg:pl-6 md:pl-5 pl-5">Dashboard</h1>
 
-                <h1 class="text-white font-bold font-jost text-sm mr-auto">Your Forms</h1>    
-                            </button>
+        <div class="grid grid-cols-2 md:grid-cols-3  px-3">
+          <button onclick="window.location.href='https://thetvsschool.org'" class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+            <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="fa:globe"></span>    
 
-                            <button class="py-4 px-3 m-2 rounded-md flex flex-row items-center content-center bg-gradient-to-r from-blue-500 to-purple-400">
-                                <span class="text-white font-semibold text-2xl iconify font-jost  ml-auto mr-2"  data-icon="ep:document">Forms</span>    
-                
-                                <h1 class="text-white font-bold font-jost text-sm mr-auto">Your Forms</h1>    
-                                            </button>
-                                            <button class="py-4 px-3 m-2 rounded-md flex flex-row items-center content-center bg-gradient-to-r from-blue-500 to-purple-400">
-                                                <span class="text-white font-semibold text-2xl iconify font-jost  ml-auto mr-2"  data-icon="ep:document">Forms</span>    
-                                
-                                                <h1 class="text-white font-bold font-jost text-sm mr-auto">Your Forms</h1>    
-                                                            </button>
-                                                            <button class="py-4 px-3 m-2 rounded-md flex flex-row items-center content-center bg-gradient-to-r from-blue-500 to-purple-400">
-                                                                <span class="text-white font-semibold text-2xl iconify font-jost  ml-auto mr-2"  data-icon="ep:document">Forms</span>    
-                                                
-                                                                <h1 class="text-white font-bold font-jost text-sm mr-auto">Your Forms</h1>    
-                                                                            </button>
-                                                                            <button class="py-4 px-3 m-2 rounded-md flex flex-row items-center content-center bg-gradient-to-r from-blue-500 to-purple-400">
-                                                                                <span class="text-white font-semibold text-2xl iconify font-jost  ml-auto mr-2"  data-icon="ep:document">Forms</span>    
-                                                                
-                                                                                <h1 class="text-white font-bold font-jost text-sm mr-auto">Your Forms</h1>    
-                                                                                            </button>
+            <h1 class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto "><span class="hidden md:inline-flex">Main</span> Website</h1>    
+          </button>
+          <button onclick="window.location.href='forms.html'" class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+            <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="ep:document">Forms</span>    
+
+            <h1 class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto ">Your Forms</h1>    
+                        </button>
+                        <button onclick="window.location.href='upload.html'" class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+                          <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="ep:upload">Forms</span>    
+          
+                          <h1 class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto ">Upload</h1>    
+                                      </button>
+                                      <button class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+                                        <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="ep:link">Forms</span>    
+                        
+                                        <h1 class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto ">Portal</h1>    
+                                                    </button>
+                                                    <button class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+                                                      <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="ep:message"></span>    
+                                      
+                                                      <h1 onclick="window.location.href='mailto:invincibleinventor@gmail.com'"class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto ">Contact</h1>    
+                                                                  </button>
+                                                                  <button onclick="accessAdmin()" class="md:py-8 py-5 px-3 m-2  flex md:flex-col md:space-y-4 space-y-0  flex-row items-center content-center border border-blue-500">
+                                                                    <span class="text-blue-500 font-semibold md:text-7xl text-2xl iconify font-jost  md:ml-0 ml-auto mr-4 mb-0 md:mr-0"  data-icon="ep:user"></span>    
+                                                    
+                                                                    <h1 class="text-blue-500 font-inter font-semibold text-sm  md:text-xl lg:text-xl md:mr-0 mr-auto ">Admin <span class="hidden md:inline-flex">Console</span></h1>    
+                                                                                </button>
                
         
       
-      </div>
-        <div id="admin"></div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div id="admin"></div>
   </div>
       <div id="notlogged">
           Not Logged In. Access Denied
       </div>
+      <script src="https://npmcdn.com/js-alert/dist/jsalert.min.js"></script>
+
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
       <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
       <script>
-           const firebaseConfig = {
+               const firebaseConfig = {
       apiKey: "AIzaSyB4BuDJvPnZG5FS51jAfuOGnnXGyyFwvfY",
       authDomain: "auformproject.firebaseapp.com",
       databaseURL: "https://auformproject-default-rtdb.firebaseio.com",
@@ -92,6 +101,16 @@
     document.getElementById('notlogged').classList.add('hidden');
   }
 });
+
+
+function accessAdmin(){
+  if (document.getElementById('admin').classList.contains('hidden')){
+  JSAlert.alert("<code>Error:- You have not been granted Admin access</code>", null, JSAlert.Icons.Failed);
+  }
+  else{
+    window.location.href='admin.html'
+  }
+}
 
 function logout(){
     firebase.auth().signOut();
