@@ -1,0 +1,192 @@
+<!doctype html>
+<head>
+    <link href="../dist/output.css" rel="stylesheet"></script>
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    
+</style>
+</head>
+<body class="bg-white flex flex-col items-center content-center sm:py-20 ">
+    <form class="mx-auto w-screen md:w-auto my-auto" id="formie">
+        <div class="px-6 py-4 bg-blue-500 sm:rounded-t-md">
+        <h3 class="text-2xl font-semibold leading-6 text-white mt-2 mb-2">Staff Attendance Form</h3>
+        <p class="mt-1  text-sm text-neutral-100 mb-1 leading-6">[STAFF] Please fill this form regarding your attendance</p>
+    </div>
+        <div class=" overflow-hidden">
+            
+          <div class="px-4 py-5 bg-white sm:p-6 sm:pt-2">
+              
+            <div class="col-span-6 sm:col-span-3  py-3">
+              <label for="first-name" class="block text-sm font-medium text-gray-700">Date</label>
+              <input type="text" id="date" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+
+            <div class="col-span-6 sm:col-span-3  py-3">
+              <label for="first-name" class="block text-sm font-medium text-gray-700">Name followed by initial</label>
+              <input type="text" id="name" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            
+
+            <div class="grid grid-cols-6 gap-6 py-3">
+              <div class="col-span-6 sm:col-span-3  py-3">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">Employee Code</label>
+                <input type="text" id="code" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="col-span-6 sm:col-span-3  py-3">
+                <label for="first-name" class="block text-sm font-medium text-gray-700">No of Classes Handled</label>
+                <input type="text" id="classes" autocomplete="given-name" class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+              
+            
+              
+              
+              
+                
+            
+           
+            <div class="col-span-6 sm:col-span-3">
+              <label for="status" class="block text-sm font-medium text-gray-700">Attendance Status</label>
+              <select name="status" id="status">
+                <option value="present">Present</option>
+                <option value="absent">Absent</option>
+                <option value="OD">OD</option>
+                
+              
+            </select>   
+                
+          
+          </div>
+
+              
+
+              
+            </div>
+            
+              <div class="col-span-6 sm:col-span-3 py-3">
+                <label for="last-name" class="block text-sm font-medium text-gray-700">Reason</label>
+                <input type="text"  id="reason"  class="mt-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+            
+          </div>
+          <div class="px-4 py-2 rounded-b-md flex flex-row bg-gray-50 text-right sm:px-6">
+            <button onclick="postdata()" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-blue-600 w-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+          </div>
+        </div>
+      </form>
+      <div id="notlogged" class="py-20 sm:py-0">
+        <h1 id="lex">Not Logged In. Access Denied</h1>
+      </div>
+      
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-database-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+      <script>
+           const firebaseConfig = {
+      apiKey: "AIzaSyB4BuDJvPnZG5FS51jAfuOGnnXGyyFwvfY",
+      authDomain: "auformproject.firebaseapp.com",
+      databaseURL: "https://auformproject-default-rtdb.firebaseio.com",
+      projectId: "auformproject",
+      storageBucket: "auformproject.appspot.com",
+      messagingSenderId: "466460203182",
+      appId: "1:466460203182:web:c26f232654d7a18fc6b53f"
+    };
+  
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+   const db = firebaseApp.database();
+   const auth = firebase.auth();
+   console.log(localStorage.getItem('uemail'))
+
+
+   var fileName = 'Attendance';
+   var uemail = localStorage.getItem('uemail');
+   var bef = firebase.database().ref("forms/")
+bef.once("value")
+  .then(function(snapshot) {
+    var a = snapshot.child(fileName+'/'+uemail).exists(); 
+    
+    var b = snapshot.child(fileName+'/'+uemail).exists(); 
+    var c = snapshot.child(fileName+'/'+uemail).exists(); 
+console.log(a, b, c);
+
+var lvl;
+  if(!(a==true || b==true || c==true)){
+
+dref = firebase.database().ref('forms/'+fileName+'/'+localStorage.getItem('uemail'));
+
+
+
+   document.getElementById('status').addEventListener('change', function() {
+    lvl=this.value;
+    dref = firebase.database().ref('forms/'+fileName+'/'+localStorage.getItem('uemail'));
+    console.log(dref);
+    console.log(lvl);
+
+  });
+
+   auth.onAuthStateChanged(i => {
+  if (!i) {
+    document.getElementById('formie').classList.add('hidden');
+      document.getElementById('notlogged').classList.remove('hidden');
+      document.getElementById('notlogged').value = 'Access denied';
+
+} 
+else {
+    document.getElementById('formie').classList.remove('hidden');
+
+    document.getElementById('notlogged').classList.add('hidden');
+    document.getElementById('notlogged').value = '';
+
+
+  }
+});
+
+  }
+  else{
+    document.getElementById('formie').classList.add('hidden');
+      document.getElementById('notlogged').classList.remove('hidden');
+      document.getElementById('lex').textContent = 'Submitted';
+  }
+
+});
+
+
+
+
+function postdata(){
+  dref.set({
+  date: document.getElementById('date').value,
+  name: document.getElementById('name').value,
+  code: document.getElementById('code').value,
+
+  status: document.getElementById('status').value,
+  classes_handled: document.getElementById('classes').value,
+  reason: document.getElementById('reason').value,
+
+
+  })
+  .then(function() {
+    return ref.once("value");
+  })
+  .then(function(snapshot) {
+    var data = snapshot.val(); // data === "hello"
+  });
+
+  document.getElementById('date').value=''
+  document.getElementById('code').value=''
+document.getElementById('name').value=''
+document.getElementById('status').value=''
+document.getElementById('status').value=''
+document.getElementById('classes').value=''
+ document.getElementById('reason').classList.add('hidden');
+ document.getElementById('notlogged').classList.remove('hidden');
+ document.getElementById('notlogged').value='Already Responded';
+
+}
+  
+          </script>
+
+</body>
